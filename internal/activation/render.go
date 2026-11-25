@@ -7,7 +7,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/profile"
 )
 
 // BlockVersion is the contract version of the env block.

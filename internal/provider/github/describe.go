@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Describe implements provider.Provider: the cached bot login (empty when

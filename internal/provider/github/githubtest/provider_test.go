@@ -6,15 +6,15 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestAppProviderMeetsTheContract(t *testing.T) {
 	providertest.RunContract(t, func(t *testing.T) providertest.Subject {
 		app := NewApp(t, testenv.NewFakeAPI(t))
-		app.AddInstallation(installationID, "cultofthecode/widgets")
+		app.AddInstallation(installationID, "cultoftheai/widgets")
 		return providertest.Subject{
 			Provider:         app.Provider(installationID),
 			FailTokens:       app.FailTokensWith,
@@ -25,7 +25,7 @@ func TestAppProviderMeetsTheContract(t *testing.T) {
 
 func TestAppProviderSharesTheFakeAPIState(t *testing.T) {
 	app, client := newApp(t)
-	app.AddInstallation(installationID, "cultofthecode/widgets")
+	app.AddInstallation(installationID, "cultoftheai/widgets")
 	token, err := app.Provider(installationID).Token(context.Background())
 	if err != nil {
 		t.Fatal(err)

@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // Identity of the fake activator: test data, never a real host.

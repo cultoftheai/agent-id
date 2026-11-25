@@ -1,6 +1,6 @@
 # Execution plan — rename the product to agent-id (#6)
 
-Source issue: https://github.com/cultofthecode/agent-id/issues/6 (E01-T01)
+Source issue: https://github.com/cultoftheai/agent-id/issues/6 (E01-T01)
 Decision: Jacob, 12 November 2026, 22:40 Europe/Warsaw — the product name is `agent-id` everywhere, replacing the working name `aidentity` (decision comment on #6).
 Branch: `chore/6-rename-agent-id` (named by the owner's task brief)
 
@@ -20,7 +20,7 @@ Apply the recorded name decision: the binary, the composition root package, the 
 ## Non-goals
 
 - `PRODUCT_BRIEF.md` keeps its historical mentions of the working name; no rewrite of history.
-- The repository name and Go module path `github.com/cultofthecode/agent-id` stay.
+- The repository name and Go module path `github.com/cultoftheai/agent-id` stay.
 - The availability check (package, domain, trademark) is a pre-launch item, not part of this change.
 - GitHub issue titles and bodies are not edited.
 

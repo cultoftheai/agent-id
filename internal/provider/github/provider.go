@@ -16,7 +16,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Fixed GitHub.com values. GitHub Enterprise Server is out of scope (brief

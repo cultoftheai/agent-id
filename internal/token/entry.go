@@ -8,7 +8,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // entryVersion is the format version of a cache entry. An entry of another

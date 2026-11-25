@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // exampleConfig is the v1 example of the profile-config spec.

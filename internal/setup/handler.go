@@ -9,8 +9,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // profileUsage is the hint of the --profile flag.

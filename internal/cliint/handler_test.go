@@ -10,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
-	"github.com/cultofthecode/agent-id/internal/token"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/token"
 )
 
 const personal = "personal-credential-value"

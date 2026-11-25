@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/github/githubtest"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/github/githubtest"
 )
 
 func TestDescribeReadsTheCachedIdentityWithoutANetworkCall(t *testing.T) {

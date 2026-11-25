@@ -1,6 +1,6 @@
 # Releasing agent-id
 
-agent-id is open source (Apache-2.0) and ships through GitHub Releases (issue #11; owner decision recorded on #11). The Homebrew tap `cultofthecode/homebrew-tap` is a second channel (issue #46). The job `tap` of the same workflow updates it for a stable tag. See "The Homebrew tap" below.
+agent-id is open source (Apache-2.0) and ships through GitHub Releases (issue #11; owner decision recorded on #11). The Homebrew tap `cultoftheai/homebrew-tap` is a second channel (issue #46). The job `tap` of the same workflow updates it for a stable tag. See "The Homebrew tap" below.
 
 ## What a release contains
 
@@ -16,7 +16,7 @@ A user verifies an archive with:
 
 ```sh
 sha256sum -c checksums.txt --ignore-missing     # or: shasum -a 256 -c …
-gh attestation verify agent-id_X.Y.Z_linux_amd64.tar.gz --repo cultofthecode/agent-id --signer-workflow cultofthecode/agent-id/.github/workflows/release.yml
+gh attestation verify agent-id_X.Y.Z_linux_amd64.tar.gz --repo cultoftheai/agent-id --signer-workflow cultoftheai/agent-id/.github/workflows/release.yml
 ```
 
 See "Verifying a release (user)" below for the full check.
@@ -36,7 +36,7 @@ A tag push runs `release.yml` as it is **at the tagged commit**, so the checks i
 - **Who may tag.** Only a repository admin can create, update, or delete a `v*` tag (tag ruleset 27182241; the only bypass is the admin role). A Maintainer who is not an admin asks an admin to push the tag.
 - **Approval.** The publishing job runs in the environment `release`. A deployment to it needs approval from the owner (required reviewer `jakubtobiasz`; the owner, who is the only admin and tags the release, also approves the deployment himself, since self-review is allowed by the owner's decision of 2026-11-13), and the environment accepts deployments from `v*` tags only. The approver checks that the tag is the intended one and that the tagged commit is on `main` before approving. The normal path is that approval; the environment setting that lets admins bypass protection rules is a residual gap for the owner to keep or close, and bypassing approval is not the normal path.
 - **Immutable releases.** Releases are immutable: once published, a release's assets and tag cannot be changed.
-- **Secrets.** Every release secret is stored only as a secret of the environment `release`, never as a repository or organization secret, so that only an approved release job can read it. The job `release` holds only the default `GITHUB_TOKEN` (`contents: write`, plus `id-token: write` and `attestations: write` for the attestation). The job `tap` holds the default `GITHUB_TOKEN` with `contents: read` and the secret `TAP_GITHUB_TOKEN`, a fine-grained personal access token that the owner created. It must write only to `cultofthecode/homebrew-tap`. No agent creates, reads, or prints it.
+- **Secrets.** Every release secret is stored only as a secret of the environment `release`, never as a repository or organization secret, so that only an approved release job can read it. The job `release` holds only the default `GITHUB_TOKEN` (`contents: write`, plus `id-token: write` and `attestations: write` for the attestation). The job `tap` holds the default `GITHUB_TOKEN` with `contents: read` and the secret `TAP_GITHUB_TOKEN`, a fine-grained personal access token that the owner created. It must write only to `cultoftheai/homebrew-tap`. No agent creates, reads, or prints it.
 
 The workflow fetches the tag without credentials, so it assumes the repository is public. GoReleaser is downloaded by `goreleaser-action` at the pinned version. Never move, delete, or force-push a published tag; fix a broken release with the next patch version.
 
@@ -56,7 +56,7 @@ The workflow fetches the tag without credentials, so it assumes the repository i
 
 ## The Homebrew tap
 
-`brew install cultofthecode/tap/agent-id` installs the formula `Formula/agent-id.rb` of the tap `cultofthecode/homebrew-tap`. The tap also holds the formula of orbit.
+`brew install cultoftheai/tap/agent-id` installs the formula `Formula/agent-id.rb` of the tap `cultoftheai/homebrew-tap`. The tap also holds the formula of orbit.
 
 The formula builds from the source tarball of the tag. It needs `go` at build time, has the license `Apache-2.0`, and its test runs `agent-id --version`. It needs no signing. The template is `.github/homebrew/agent-id.rb.tmpl`. The script `.github/scripts/render-tap-formula.sh vX.Y.Z OUTPUT_FILE` downloads the tarball of the tag, computes its SHA-256, and renders the formula. Only `url` and `sha256` change from release to release.
 
@@ -88,8 +88,8 @@ Check the archive against `checksums.txt`, then check where it was built. The si
 
 ```sh
 gh attestation verify agent-id_X.Y.Z_linux_amd64.tar.gz \
-  --repo cultofthecode/agent-id \
-  --signer-workflow cultofthecode/agent-id/.github/workflows/release.yml \
+  --repo cultoftheai/agent-id \
+  --signer-workflow cultoftheai/agent-id/.github/workflows/release.yml \
   --source-ref refs/tags/vX.Y.Z
 ```
 

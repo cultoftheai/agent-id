@@ -2,7 +2,7 @@
 
 - **Issue:** #13 (E02-T01), epic #2, Phase 1
 - **Date:** 2026-11-12
-- **Status:** research result; the open points O1–O4 were decided on 2026-11-13 ([decision on #22](https://github.com/cultofthecode/agent-id/issues/22#issuecomment-6845770922)). It feeds `internal/gitint` and the credential helper (E02-S08). `ARCHITECTURE.md` records the Git paths and documented bypasses as a decision. Section 8 lists the decisions.
+- **Status:** research result; the open points O1–O4 were decided on 2026-11-13 ([decision on #22](https://github.com/cultoftheai/agent-id/issues/22#issuecomment-6845770922)). It feeds `internal/gitint` and the credential helper (E02-S08). `ARCHITECTURE.md` records the Git paths and documented bypasses as a decision. Section 8 lists the decisions.
 - **Inputs:** `PRODUCT_BRIEF.md` §9.3, §10, §14; `ARCHITECTURE.md` (Git integration, Security model)
 - **Experiment:** [`2026-11-12-git-precedence-matrix.sh`](2026-11-12-git-precedence-matrix.sh)
 
@@ -277,7 +277,7 @@ None of these can be prevented in local mode. They match brief §10: local mode 
 
 ## 8. Decisions on the open points
 
-Decided on 2026-11-13 by the project manager under the owner's delegation of technical decisions ([decision on #22](https://github.com/cultofthecode/agent-id/issues/22#issuecomment-6845770922)). The decisions follow the fail-closed rule of E02-S11 and can be reversed before the first release. They affect #20 (`exec`), #22 (HTTPS and SSH), and #24 (`doctor`). The questions are kept below the decisions as the record.
+Decided on 2026-11-13 by the project manager under the owner's delegation of technical decisions ([decision on #22](https://github.com/cultoftheai/agent-id/issues/22#issuecomment-6845770922)). The decisions follow the fail-closed rule of E02-S11 and can be reversed before the first release. They affect #20 (`exec`), #22 (HTTPS and SSH), and #24 (`doctor`). The questions are kept below the decisions as the record.
 
 - **O1 — SSH remotes outside the rewrite set. Decided: fail closed.** `agent-id exec` refuses to start in a repository whose GitHub remote still resolves to SSH after the rewrite set. The error names the remote and points to `agent-id doctor`, and D1 changes from a warning to a refusal. *Question:* Section 5 rewrites seven SSH forms. Should agent-id cover only these, or also refuse (in `exec`) a repository whose GitHub remote still resolves to SSH after the set? The latter would turn D1 from a warning into a fail-closed start.
 - **O2 — inherited `GIT_CONFIG_PARAMETERS`. Decided: the recommendation below.** `exec` refuses to start when the variable contains a `credential`, `url`, `http`, or signing key. Otherwise it keeps the variable and `doctor` reports it. The variable is never removed silently. *Question:* It overrides agent-id (C19b). The options are to refuse to start, to remove the variable from the child environment, or to report it only in `doctor`. The first two change the environment that `exec` and `env` emit, which needs the owner's yes (`AGENTS.md`, Ask first). Recommendation: refuse to start when the variable contains a `credential`, `url`, `http`, or signing key; otherwise keep it and report it.

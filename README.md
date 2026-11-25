@@ -91,7 +91,7 @@ Deleting a key in GitHub does not revoke installation tokens already minted with
 - `ARCHITECTURE.md`: system structure and decisions
 - `SDLC.md`: how work moves from an issue to a merged PR
 - `CHANGELOG.md`: what changed in each release
-- Backlog: https://github.com/cultofthecode/agent-id/issues
+- Backlog: https://github.com/cultoftheai/agent-id/issues
 
 ## License
 

@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/cultofthecode/agent-id/internal/activation"
+	"github.com/cultoftheai/agent-id/internal/activation"
 )
 
 // Handler runs env.

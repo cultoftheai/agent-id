@@ -16,7 +16,7 @@ linters:
             - "!**/internal/provider/providertest/**"
             - "!**/internal/provider/github/githubtest/**"
           deny:
-            - pkg: github.com/cultofthecode/agent-id/internal/testenv$
+            - pkg: github.com/cultoftheai/agent-id/internal/testenv$
               desc: only test files and the test helper packages import the test isolation helpers (AGENTS.md, Test isolation)
         test-helpers-only-in-tests:
           list-mode: lax
@@ -24,16 +24,16 @@ linters:
             - "$all"
             - "!$test"
           deny:
-            - pkg: github.com/cultofthecode/agent-id/internal/provider/providertest$
+            - pkg: github.com/cultoftheai/agent-id/internal/provider/providertest$
               desc: only test files import the provider contract and fake (AGENTS.md, Test isolation)
-            - pkg: github.com/cultofthecode/agent-id/internal/provider/github/githubtest$
+            - pkg: github.com/cultoftheai/agent-id/internal/provider/github/githubtest$
               desc: only test files import the fake GitHub App (AGENTS.md, Test isolation)
         profile-is-provider-agnostic:
           list-mode: lax
           files:
             - "**/internal/profile/**"
           deny:
-            - pkg: github.com/cultofthecode/agent-id/internal/provider
+            - pkg: github.com/cultoftheai/agent-id/internal/provider
               desc: the profile store imports no provider package, so that adapters can import it (ADR #35, profile-config spec)
         token-uses-only-the-provider-port:
           list-mode: strict
@@ -42,16 +42,16 @@ linters:
             - "!$test"
           allow:
             - $gostd
-            - github.com/cultofthecode/agent-id/internal/provider$
+            - github.com/cultoftheai/agent-id/internal/provider$
         token-tests-use-only-the-provider-port-and-fakes:
           list-mode: strict
           files:
             - "**/internal/token/**_test.go"
           allow:
             - $gostd
-            - github.com/cultofthecode/agent-id/internal/provider$
-            - github.com/cultofthecode/agent-id/internal/provider/providertest$
-            - github.com/cultofthecode/agent-id/internal/testenv$
+            - github.com/cultoftheai/agent-id/internal/provider$
+            - github.com/cultoftheai/agent-id/internal/provider/providertest$
+            - github.com/cultoftheai/agent-id/internal/testenv$
         cliint-uses-only-the-ports:
           list-mode: strict
           files:
@@ -60,18 +60,18 @@ linters:
           allow:
             - $gostd
             - github.com/spf13/cobra$
-            - github.com/cultofthecode/agent-id/internal/provider$
-            - github.com/cultofthecode/agent-id/internal/token$
+            - github.com/cultoftheai/agent-id/internal/provider$
+            - github.com/cultoftheai/agent-id/internal/token$
         cliint-tests-use-only-the-ports-and-fakes:
           list-mode: strict
           files:
             - "**/internal/cliint/**_test.go"
           allow:
             - $gostd
-            - github.com/cultofthecode/agent-id/internal/provider$
-            - github.com/cultofthecode/agent-id/internal/provider/providertest$
-            - github.com/cultofthecode/agent-id/internal/token$
-            - github.com/cultofthecode/agent-id/internal/testenv$
+            - github.com/cultoftheai/agent-id/internal/provider$
+            - github.com/cultoftheai/agent-id/internal/provider/providertest$
+            - github.com/cultoftheai/agent-id/internal/token$
+            - github.com/cultoftheai/agent-id/internal/testenv$
         github-only-in-its-adapter:
           list-mode: lax
           files:
@@ -79,5 +79,5 @@ linters:
             - "!**/internal/provider/github/**"
             - "!**/cmd/agent-id/main.go"
           deny:
-            - pkg: github.com/cultofthecode/agent-id/internal/provider/github
+            - pkg: github.com/cultoftheai/agent-id/internal/provider/github
               desc: core depends on internal/provider only; GitHub code stays in its adapter, and only the composition root wires it (ADR #35)

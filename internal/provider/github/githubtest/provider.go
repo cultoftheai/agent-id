@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Host is the host the fake App stands in for.

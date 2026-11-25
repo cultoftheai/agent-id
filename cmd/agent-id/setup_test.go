@@ -20,11 +20,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/setup"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/setup"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // githubFields mirror the GitHub onboarder's fields for the fake onboarder;
@@ -281,7 +281,7 @@ func writeKeyFile(t *testing.T, env testenv.Env, mode os.FileMode) string {
 
 func TestSetupBinaryFailsBeforeTheNetwork(t *testing.T) {
 	env := testenv.Isolate(t)
-	binary := testenv.BuildBinary(t, env, "github.com/cultofthecode/agent-id/cmd/agent-id")
+	binary := testenv.BuildBinary(t, env, "github.com/cultoftheai/agent-id/cmd/agent-id")
 	personalConfig(t, env)
 	openKey := writeKeyFile(t, env, 0o644)
 	configPath, err := profile.Path(os.Getenv)

@@ -1,8 +1,8 @@
 package activation
 
 import (
-	"github.com/cultofthecode/agent-id/internal/gitint"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/gitint"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // withTransport appends the Git transport group of #22 to the plan: the

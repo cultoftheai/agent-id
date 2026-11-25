@@ -9,7 +9,7 @@ package doctor
 import (
 	"context"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/profile"
 )
 
 // Input is one doctor request.

@@ -17,7 +17,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestMain(m *testing.M) { testenv.Main(m) }
@@ -26,7 +26,7 @@ const installationID int64 = 77
 
 func TestAppEndToEnd(t *testing.T) {
 	app, client := newApp(t)
-	app.AddInstallation(installationID, "cultofthecode/widgets", "cultofthecode/gadgets")
+	app.AddInstallation(installationID, "cultoftheai/widgets", "cultoftheai/gadgets")
 	jwt := appJWT(t, app, time.Now())
 
 	var got struct {
@@ -61,7 +61,7 @@ func TestAppEndToEnd(t *testing.T) {
 		} `json:"repositories"`
 	}
 	call(t, client, http.MethodGet, app.URL+"/installation/repositories", "token "+minted.Token, http.StatusOK, &repos)
-	if repos.TotalCount != 2 || repos.Repositories[0].FullName != "cultofthecode/widgets" || repos.Repositories[1].FullName != "cultofthecode/gadgets" {
+	if repos.TotalCount != 2 || repos.Repositories[0].FullName != "cultoftheai/widgets" || repos.Repositories[1].FullName != "cultoftheai/gadgets" {
 		t.Errorf("GET /installation/repositories = %+v, want the two installed repositories", repos)
 	}
 
@@ -176,7 +176,7 @@ func TestTokenLifetime(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			app, client := newApp(t)
-			app.AddInstallation(installationID, "cultofthecode/widgets")
+			app.AddInstallation(installationID, "cultoftheai/widgets")
 			app.SetTokenLifetime(tt.lifetime)
 			var minted struct {
 				Token     string    `json:"token"`

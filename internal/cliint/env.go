@@ -4,7 +4,7 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // BuildEnv returns the environment of the real CLI. It starts from parent,

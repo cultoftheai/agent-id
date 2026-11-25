@@ -55,7 +55,7 @@ Use `whoami` and the cache entry as proof. Do not use `doctor` as proof. `doctor
 
    ```sh
    agent-id setup github --profile e2e --app-id 5746535 --installation-id 181640369 --private-key "$KEY"
-   cd "$ISO/work" && git init -q -b main && git remote add origin https://github.com/cultofthecode/agent-id-e2e
+   cd "$ISO/work" && git init -q -b main && git remote add origin https://github.com/cultoftheai/agent-id-e2e
    agent-id exec --profile e2e -- git fetch -q origin main
    git checkout -q -B main FETCH_HEAD
    ```
@@ -109,7 +109,7 @@ Remove `$TMPDIR/agent-id/expiry` when you finish. Attach the E1 and E2 values an
 ## Prerequisites
 
 - macOS or Linux, with `go`, `git`, and (for the push steps) `gh` on `PATH`.
-- The disposable repository `cultofthecode/agent-id-e2e` (private). Its name must end with `-e2e`. The test refuses any other name.
+- The disposable repository `cultoftheai/agent-id-e2e` (private). Its name must end with `-e2e`. The test refuses any other name.
 - The test App `agent-id-e2e-bot`, installed only on that repository. App ID `5746535`. Installation ID `181640369`. Both values date from 2026-11-13. Check them in the App settings when the run fails with "installation not found".
 - The App private key as a file on this machine. The file must have mode `0600` and belong to you.
 - The default branch `main` exists in the repository. The App has Contents and Pull requests write permission.
@@ -126,7 +126,7 @@ Never put the key in the repository. Never paste it in a terminal, a PR, or an i
 | `AGENT_ID_E2E_KEY` | Absolute path of the App private key file. | yes |
 | `AGENT_ID_E2E_APP_ID` | `5746535` | yes |
 | `AGENT_ID_E2E_INSTALLATION_ID` | `181640369` | yes |
-| `AGENT_ID_E2E_REPO_URL` | `https://github.com/cultofthecode/agent-id-e2e` | yes |
+| `AGENT_ID_E2E_REPO_URL` | `https://github.com/cultoftheai/agent-id-e2e` | yes |
 | `AGENT_ID_E2E_BOT_LOGIN` | `agent-id-e2e-bot[bot]` | yes |
 | `AGENT_ID_E2E_GH` | `1` enables the `gh` steps. The `gh` token injection (#23, PR #104) is on `main`. | no |
 
@@ -141,7 +141,7 @@ AGENT_ID_E2E=1 \
 AGENT_ID_E2E_KEY=/absolute/path/to/agent-id-e2e-bot.pem \
 AGENT_ID_E2E_APP_ID=5746535 \
 AGENT_ID_E2E_INSTALLATION_ID=181640369 \
-AGENT_ID_E2E_REPO_URL=https://github.com/cultofthecode/agent-id-e2e \
+AGENT_ID_E2E_REPO_URL=https://github.com/cultoftheai/agent-id-e2e \
 AGENT_ID_E2E_BOT_LOGIN='agent-id-e2e-bot[bot]' \
 AGENT_ID_E2E_GH=1 \
 go test -tags e2e -count=1 -v ./e2e/

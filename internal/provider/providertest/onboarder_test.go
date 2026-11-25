@@ -6,8 +6,8 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 var fakeFields = []provider.SetupField{{Name: "account-id", Usage: "the account"}, {Name: "key", Usage: "the key file"}}

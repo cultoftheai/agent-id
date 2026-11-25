@@ -15,9 +15,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/testenv"
-	"github.com/cultofthecode/agent-id/internal/token"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/token"
 )
 
 // The process tests of the gh shim (#23, spec

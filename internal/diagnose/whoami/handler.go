@@ -5,9 +5,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/diagnose"
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/diagnose"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Handler runs whoami. ReadContext is called first and decides whether

@@ -211,7 +211,7 @@ ok    config.load          configuration ~/.config/agent-id/config.json loaded
 ok    key.file             private key ~/.config/agent-id/keys/claude.pem: regular file, mode 0600, parses
 ok    provider.token       installation token minted (expires in 60m)
 ok    provider.identity    claude-dev[bot] matches the cached identity
-ok    provider.repo        installation can read cultofthecode/agent-id
+ok    provider.repo        installation can read cultoftheai/agent-id
 warn  git.helper.personal  credential helper "osxkeychain" for https://github.com (global ~/.gitconfig)
       fix: none needed in agent mode: agent-id resets helpers for github.com; remove the line only if you do not use it yourself
 FAIL  git.remote.ssh       remote origin resolves to SSH (git@github.com:o/r.git) through url.git@github.com:.insteadOf (global ~/.gitconfig)

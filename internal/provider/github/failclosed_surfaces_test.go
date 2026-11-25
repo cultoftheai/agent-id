@@ -10,13 +10,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/cliint"
-	"github.com/cultofthecode/agent-id/internal/credential"
-	"github.com/cultofthecode/agent-id/internal/gitint/credentialhelper"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/github/githubtest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
-	"github.com/cultofthecode/agent-id/internal/token"
+	"github.com/cultoftheai/agent-id/internal/cliint"
+	"github.com/cultoftheai/agent-id/internal/credential"
+	"github.com/cultoftheai/agent-id/internal/gitint/credentialhelper"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/github/githubtest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/token"
 )
 
 // The mint-failure scenarios of #25 (E02-S11) for the two surfaces that hand

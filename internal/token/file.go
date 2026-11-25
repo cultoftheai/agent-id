@@ -13,7 +13,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // File names and limits of the cache directory.

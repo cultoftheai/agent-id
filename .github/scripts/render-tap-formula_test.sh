@@ -22,7 +22,7 @@ want="$(shasum -a 256 src.tar.gz | cut -d ' ' -f 1)"
 export AGENT_ID_TARBALL="$root/src.tar.gz"
 
 "$script" v0.2.0 agent-id.rb
-grep -qxF '  url "https://github.com/cultofthecode/agent-id/archive/refs/tags/v0.2.0.tar.gz"' agent-id.rb || fail "url"
+grep -qxF '  url "https://github.com/cultoftheai/agent-id/archive/refs/tags/v0.2.0.tar.gz"' agent-id.rb || fail "url"
 grep -qxF "  sha256 \"$want\"" agent-id.rb || fail "sha256"
 grep -qxF '  license "Apache-2.0"' agent-id.rb || fail "license"
 grep -qxF '  depends_on "go" => :build' agent-id.rb || fail "go build dependency"

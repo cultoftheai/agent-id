@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 const host = "github.com"

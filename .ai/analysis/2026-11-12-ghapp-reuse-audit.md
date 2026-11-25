@@ -2,12 +2,12 @@
 
 - **Issue:** #7 (E01-T02), epic #1, Phase 0
 - **Date:** 2026-11-12
-- **Status:** decided. The owner recorded the decisions on 2026-11-12 in [PR #31](https://github.com/cultofthecode/agent-id/pull/31#issuecomment-6836685825); see §5. #8 (E01-T03, license of agent-id) depends on this audit.
+- **Status:** decided. The owner recorded the decisions on 2026-11-12 in [PR #31](https://github.com/cultoftheai/agent-id/pull/31#issuecomment-6836685825); see §5. #8 (E01-T03, license of agent-id) depends on this audit.
 - **Method:** read the source only. The repositories were cloned anonymously into `$TMPDIR/agent-id/ghapp-audit/` with a temporary `HOME` and Git configuration, then deleted. Nothing ran that changes the ghapp, `gh`, or Git configuration. The only `ghapp` command used was `ghapp version`, and `go version -m` read the build information of the binary.
 
 ## Summary
 
-1. The installed `ghapp` was built from commit `6cf72fc22665368ba067cca6f84989177316eaef` of **`github.com/cultofthecode/ghapp-cli`** (tag `v0.1.2`). That commit is **not** in `github.com/operator-kit/ghapp-cli`. It is one commit on top of the upstream head `3a5e67686a26d4916d6bf5c60cb7a8b065ab4502` ("Add license"). The commit changes only the installer, the release configuration, the README, and the self-update URL. Every component this audit evaluates is byte-identical at `6cf72fc` and at upstream `3a5e676`.
+1. The installed `ghapp` was built from commit `6cf72fc22665368ba067cca6f84989177316eaef` of **`github.com/cultoftheai/ghapp-cli`** (tag `v0.1.2`). That commit is **not** in `github.com/operator-kit/ghapp-cli`. It is one commit on top of the upstream head `3a5e67686a26d4916d6bf5c60cb7a8b065ab4502` ("Add license"). The commit changes only the installer, the release configuration, the README, and the self-update URL. Every component this audit evaluates is byte-identical at `6cf72fc` and at upstream `3a5e676`.
 2. License: **MIT**, `Copyright (c) 2026 Ross Morsali`, from the `LICENSE` file that upstream added in `3a5e676`. The repository has no `NOTICE` or `AUTHORS` file and no per-file copyright or SPDX headers. Code is reusable only from `3a5e676` or later. The upstream tags `v0.1.0` (`4506227`) and `v0.1.1` (`d6a85d9`) predate the `LICENSE` file.
 3. Decision (owner, 2026-11-12): **rewrite all six components from scratch; reuse no GHAPP code.** App JWT signing uses the Go standard library, not `go-githubauth`. Code copied from GHAPP without the license notice is a review blocker (`CODE_REVIEW.md`). The audit's reasons: no component meets agent-id's requirements as it is: fail closed, process scope only, a configurable API base URL for the fake GitHub, a keyed and locked token cache under XDG directories, and validation of the request path. Each component is small (46–134 lines), so a rewrite costs little. With no copied code, agent-id needs no GHAPP notice, and #8 can choose any license. The license does not force this choice: MIT would allow reuse with the notice below.
 4. No runtime dependency on GHAPP is proposed. agent-id does not read GHAPP's configuration, its token cache, or its keyring entry, and it does not call the `ghapp` binary (brief §1, §13 Phase 0).
@@ -19,15 +19,15 @@
 | Installed binary | `ghapp 0.1.2 (commit: 6cf72fc22665368ba067cca6f84989177316eaef, built: 2026-11-11T21:40:19Z)` | `ghapp version` |
 | Go module path in the binary | `github.com/operator-kit/ghapp-cli` (`mod … v0.1.2`) | `go version -m "$(command -v ghapp)"` |
 | VCS stamp in the binary | `vcs.revision=6cf72fc…`, `vcs.modified=false`, `-X main.commit=6cf72fc…` | same |
-| Repository that contains `6cf72fc` | `github.com/cultofthecode/ghapp-cli`, public, tag `v0.1.2` → `6cf72fc`. GitHub lists it as a standalone repository (`fork: false`), but it carries the full upstream history. | `git clone https://github.com/cultofthecode/ghapp-cli && git -C ghapp-cli tag --contains 6cf72fc` |
+| Repository that contains `6cf72fc` | `github.com/cultoftheai/ghapp-cli`, public, tag `v0.1.2` → `6cf72fc`. GitHub lists it as a standalone repository (`fork: false`), but it carries the full upstream history. | `git clone https://github.com/cultoftheai/ghapp-cli && git -C ghapp-cli tag --contains 6cf72fc` |
 | Repository that the issue names | `github.com/operator-kit/ghapp-cli`, public, head `3a5e676` (2026-02-23), tags `v0.1.0`, `v0.1.1`. It does **not** contain `6cf72fc`. | `git clone https://github.com/operator-kit/ghapp-cli && git -C ghapp-cli cat-file -t 6cf72fc` fails |
 | Parent of `6cf72fc` | `3a5e676` "Add license", the upstream head | `git log -2 6cf72fc` |
 | Delta `3a5e676..6cf72fc` | `.github/workflows/release.yml`, `.goreleaser.yaml`, `README.md`, `install.ps1`, `install.sh`, `internal/selfupdate/check.go`, `internal/selfupdate/check_test.go`. These are release and self-update URLs only, and no Go file outside `internal/selfupdate` changes. | `git diff --stat 3a5e676 6cf72fc` |
 | Components compared | `internal/auth`, `internal/tokencache`, `internal/gitcred`, `internal/cmd`, `internal/config`, `internal/authstate`, `internal/shellinit`, and `cmd` are identical between the two commits. | `git diff --quiet 3a5e676 6cf72fc -- <those paths>` exits 0 |
 
-The issue's hypothesis is half right. `operator-kit/ghapp-cli` is the origin of the code and of the copyright. The exact revision on JARVIS comes from the `cultofthecode` copy. **Cite the revision as `cultofthecode/ghapp-cli@6cf72fc`, which is upstream `operator-kit/ghapp-cli@3a5e676` plus release-URL changes.** A reviewer can check every path below in either repository.
+The issue's hypothesis is half right. `operator-kit/ghapp-cli` is the origin of the code and of the copyright. The exact revision on JARVIS comes from the `cultoftheai` copy. **Cite the revision as `cultoftheai/ghapp-cli@6cf72fc`, which is upstream `operator-kit/ghapp-cli@3a5e676` plus release-URL changes.** A reviewer can check every path below in either repository.
 
-Upstream history at `3a5e676` has seven commits from 2026-02-13 to 2026-02-23, all by the upstream author. The `cultofthecode` copy adds `6cf72fc` and, after the audited revision, `499eb0a` (an `install.sh` checksum fix that this audit does not use).
+Upstream history at `3a5e676` has seven commits from 2026-02-13 to 2026-02-23, all by the upstream author. The `cultoftheai` copy adds `6cf72fc` and, after the audited revision, `499eb0a` (an `install.sh` checksum fix that this audit does not use).
 
 ## 2. License and notice obligations
 
@@ -95,7 +95,7 @@ agent-id already depends on `spf13/cobra` (Apache-2.0), `spf13/pflag` (BSD-3-Cla
 
 ## 3. Components: reuse or rewrite
 
-Paths are at `cultofthecode/ghapp-cli@6cf72fc`, which equals `operator-kit/ghapp-cli@3a5e676` for these paths. The obligation for every component is the same: a rewrite carries no GHAPP obligation, and a reuse carries the notice in §2.
+Paths are at `cultoftheai/ghapp-cli@6cf72fc`, which equals `operator-kit/ghapp-cli@3a5e676` for these paths. The obligation for every component is the same: a rewrite carries no GHAPP obligation, and a reuse carries the notice in §2.
 
 | Component | Upstream path (lines) | Decision | Reason | Obligations | Implemented in |
 |---|---|---|---|---|---|
@@ -114,7 +114,7 @@ Paths are at `cultofthecode/ghapp-cli@6cf72fc`, which equals `operator-kit/ghapp
 | `auth configure` / `auth reset` / `auth status` | `internal/cmd/auth.go` | Global Git configuration (`user.name`, `user.email`, `credential.https://github.com.helper`, `url.https://github.com/.insteadOf`), `gh` `hosts.yml` edits, and PATH shim installation. Each is forbidden in agent-id (brief §9.3, §10; `AGENTS.md`, Never). agent-id uses `GIT_CONFIG_COUNT` and process environment only. |
 | Shell hooks | `internal/shellinit/*` | Writes shell startup files and fails open (above). agent-id's `env` emits a process-scoped environment and never edits startup files. |
 | Config and auth state | `internal/config`, `internal/authstate` | A different product configuration under `~/.config/ghapp/` that needs `yaml.v3` (a new dependency). The agent-id format is OPEN and is #9. |
-| Self-update | `internal/selfupdate` | It is the only part that the `cultofthecode` commit changes. Distribution is OPEN (#11). |
+| Self-update | `internal/selfupdate` | It is the only part that the `cultoftheai` commit changes. Distribution is OPEN (#11). |
 | Test fixture | `internal/auth/testdata/test.pem` | A private key committed as a fixture. agent-id ignores `*.pem` and forbids committed key material; its tests generate keys at run time. |
 
 ## 4. Rules for the Phase 1 implementers
@@ -125,7 +125,7 @@ Paths are at `cultofthecode/ghapp-cli@6cf72fc`, which equals `operator-kit/ghapp
 
 ## 5. Owner decisions
 
-The owner recorded these decisions on 2026-11-12 in [PR #31](https://github.com/cultofthecode/agent-id/pull/31#issuecomment-6836685825), answering the three questions this audit raised:
+The owner recorded these decisions on 2026-11-12 in [PR #31](https://github.com/cultoftheai/agent-id/pull/31#issuecomment-6836685825), answering the three questions this audit raised:
 
 1. **Rewrite GHAPP-related code from scratch. Do not reuse GHAPP code.** This applies to all six components in §3. agent-id therefore needs no GHAPP notice, and #8 can choose any license.
 2. **GitHub App JWT signing uses the Go standard library, not `go-githubauth`.** #15 implements RS256 signing and the installation-token call with `crypto/rsa`, `crypto/sha256`, and `net/http`, with no new module dependency.

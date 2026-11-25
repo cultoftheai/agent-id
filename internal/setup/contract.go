@@ -9,7 +9,7 @@ package setup
 import (
 	"errors"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Input is one setup request: the profile name, the provider, and the values

@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/profile"
 )
 
 var varName = regexp.MustCompile(`^[A-Za-z_][A-Za-z0-9_]*$`)

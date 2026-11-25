@@ -11,7 +11,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 var _ Source = File{}

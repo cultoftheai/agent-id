@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	"github.com/cultofthecode/agent-id/internal/gitint"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/gitint"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Handle runs one helper call. store and erase read and discard the request

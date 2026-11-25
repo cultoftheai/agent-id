@@ -11,7 +11,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Request settings for the GitHub REST API.

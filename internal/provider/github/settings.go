@@ -9,8 +9,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Members of the github profile block (profile-config spec, GitHub provider

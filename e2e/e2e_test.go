@@ -21,7 +21,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // Names of the environment variables of the E2E run. Only AGENT_ID_E2E_KEY
@@ -148,7 +148,7 @@ func newRun(t *testing.T, cfg config) *run {
 	t.Helper()
 	cfg.path = os.Getenv("PATH")
 	env := testenv.Isolate(t)
-	binary := testenv.BuildBinary(t, env, "github.com/cultofthecode/agent-id/cmd/agent-id")
+	binary := testenv.BuildBinary(t, env, "github.com/cultoftheai/agent-id/cmd/agent-id")
 	repo := filepath.Join(env.Root, "work")
 	if err := os.MkdirAll(repo, 0o700); err != nil {
 		t.Fatal(err)

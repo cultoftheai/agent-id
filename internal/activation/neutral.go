@@ -15,7 +15,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // NeutralPaths are the agent-id-owned directories of a provider.

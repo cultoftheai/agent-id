@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"slices"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // decoyToken is the fixed, non-secret value that exec gives gh in place of a

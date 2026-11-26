@@ -14,8 +14,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // The examples of the post-merge review of #99 (issue #100). Each one is a

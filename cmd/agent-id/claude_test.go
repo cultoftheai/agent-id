@@ -11,7 +11,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/integration/claude"
+	"github.com/cultoftheai/agent-id/internal/integration/claude"
 )
 
 const botEmailForClaude = "3+claude-dev[bot]@users.noreply.github.com"

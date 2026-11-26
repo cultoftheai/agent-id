@@ -15,12 +15,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/credential"
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/github/githubtest"
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/credential"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/github/githubtest"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // onboardFixture is a fake GitHub App with installationID on two

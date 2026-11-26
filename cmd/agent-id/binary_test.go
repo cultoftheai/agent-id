@@ -7,14 +7,14 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestMain(m *testing.M) { testenv.Main(m) }
 
 func TestBinary(t *testing.T) {
 	env := testenv.Isolate(t)
-	binary := testenv.BuildBinary(t, env, "github.com/cultofthecode/agent-id/cmd/agent-id")
+	binary := testenv.BuildBinary(t, env, "github.com/cultoftheai/agent-id/cmd/agent-id")
 	if !strings.HasPrefix(binary, env.Root) {
 		t.Fatalf("binary %s is outside the test root %s", binary, env.Root)
 	}

@@ -10,11 +10,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // adapterImportPath is the import path of this package.
-const adapterImportPath = "github.com/cultofthecode/agent-id/internal/provider/github"
+const adapterImportPath = "github.com/cultoftheai/agent-id/internal/provider/github"
 
 // TestOnlyTheCompositionRootImportsTheAdapter proves the ADR #35 import rule
 // beside depguard: no Go file outside internal/provider/github imports the

@@ -9,8 +9,8 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // Issue #112: Git sends a generic header to http://<host>:<port>/ although

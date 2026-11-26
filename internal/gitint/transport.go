@@ -14,7 +14,7 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Limits of a credential request.

@@ -9,7 +9,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestReadContext(t *testing.T) {
@@ -121,7 +121,7 @@ func recordingTools(t *testing.T, env testenv.Env) (dir, log string) {
 
 func TestDiagnosticCommandsInAProcess(t *testing.T) {
 	env := testenv.Isolate(t)
-	binary := testenv.BuildBinary(t, env, "github.com/cultofthecode/agent-id/cmd/agent-id")
+	binary := testenv.BuildBinary(t, env, "github.com/cultoftheai/agent-id/cmd/agent-id")
 	fakebin, calls := recordingTools(t, env)
 	decoyToken := testenv.FakeToken("process")
 	decoyReal := "ghs_" + "processdecoy1234567890"

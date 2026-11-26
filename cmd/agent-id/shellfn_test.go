@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/integration/claude"
+	"github.com/cultoftheai/agent-id/internal/integration/claude"
 	"os"
 	"os/exec"
 	"path/filepath"

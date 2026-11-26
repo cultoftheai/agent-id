@@ -8,12 +8,12 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cultofthecode/agent-id/internal/diagnose"
-	"github.com/cultofthecode/agent-id/internal/diagnose/doctor"
-	"github.com/cultofthecode/agent-id/internal/diagnose/whoami"
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/token"
+	"github.com/cultoftheai/agent-id/internal/diagnose"
+	"github.com/cultoftheai/agent-id/internal/diagnose/doctor"
+	"github.com/cultoftheai/agent-id/internal/diagnose/whoami"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/token"
 )
 
 // diagnosticCommands returns whoami and doctor wired to the production

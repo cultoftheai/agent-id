@@ -6,7 +6,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestBuildGitConfigCountIsCanonicalOnEveryPath(t *testing.T) {

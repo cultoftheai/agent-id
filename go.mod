@@ -1,4 +1,4 @@
-module github.com/cultofthecode/agent-id
+module github.com/cultoftheai/agent-id
 
 go 1.27.4
 

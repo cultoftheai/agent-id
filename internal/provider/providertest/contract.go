@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 // Subject is a provider under contract test, with the controls that the

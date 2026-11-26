@@ -52,11 +52,11 @@ changelog:
 
 release:
   github:
-    owner: cultofthecode
+    owner: cultoftheai
     name: agent-id
   prerelease: auto
   draft: true
   footer: |
     The archives are not signed or notarized. Verify an archive with
     `sha256sum -c checksums.txt --ignore-missing` and its build provenance with
-    `gh attestation verify <archive> --repo cultofthecode/agent-id`.
+    `gh attestation verify <archive> --repo cultoftheai/agent-id`.

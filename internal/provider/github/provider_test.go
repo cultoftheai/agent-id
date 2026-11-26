@@ -5,16 +5,16 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/github/githubtest"
-	"github.com/cultofthecode/agent-id/internal/provider/providertest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/github/githubtest"
+	"github.com/cultoftheai/agent-id/internal/provider/providertest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestAdapterMeetsTheContract(t *testing.T) {
 	providertest.RunContract(t, func(t *testing.T) providertest.Subject {
 		app := githubtest.NewApp(t, testenv.NewFakeAPI(t))
-		app.AddInstallation(installationID, "cultofthecode/widgets")
+		app.AddInstallation(installationID, "cultoftheai/widgets")
 		return providertest.Subject{
 			Provider:         newAdapter(t, app),
 			FailTokens:       app.FailTokensWith,

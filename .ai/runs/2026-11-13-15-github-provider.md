@@ -1,6 +1,6 @@
 # Execution plan — GitHub provider adapter (E02-S01, #15)
 
-Source issue: https://github.com/cultofthecode/agent-id/issues/15
+Source issue: https://github.com/cultoftheai/agent-id/issues/15
 Source doc: `.ai/specs/2026-11-13-github-provider-adapter.md` (spec PR #54, merged)
 Route: `om-auto-fix-issue` feature route: spec through `om-auto-write-spec`, implementation on its own PR.
 Claim-Run: aid15-43e20a3a-73ba-44c9-8288-f088f07726f7

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 func testOutput() Output { return Output{Patterns: testPatterns, Home: "/home/dev"} }

@@ -20,7 +20,7 @@ template="$here/../homebrew/agent-id.rb.tmpl"
 work="$(mktemp -d)"
 trap 'rm -rf "$work"' EXIT
 
-url="https://github.com/cultofthecode/agent-id/archive/refs/tags/${tag}.tar.gz"
+url="https://github.com/cultoftheai/agent-id/archive/refs/tags/${tag}.tar.gz"
 tarball="${AGENT_ID_TARBALL:-}"
 if [ -z "$tarball" ]; then
   tarball="$work/source.tar.gz"

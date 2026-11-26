@@ -13,8 +13,8 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/activation"
-	"github.com/cultofthecode/agent-id/internal/integration/claude"
+	"github.com/cultoftheai/agent-id/internal/activation"
+	"github.com/cultoftheai/agent-id/internal/integration/claude"
 )
 
 // Handler runs session-start.

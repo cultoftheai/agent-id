@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // commandTimeout bounds every git and ssh call of the remote checks.

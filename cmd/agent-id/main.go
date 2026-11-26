@@ -19,18 +19,18 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/cultofthecode/agent-id/internal/activation"
-	activationenv "github.com/cultofthecode/agent-id/internal/activation/env"
-	activationexec "github.com/cultofthecode/agent-id/internal/activation/exec"
-	"github.com/cultofthecode/agent-id/internal/cliint"
-	"github.com/cultofthecode/agent-id/internal/credential"
-	"github.com/cultofthecode/agent-id/internal/diagnose"
-	"github.com/cultofthecode/agent-id/internal/gitint/credentialhelper"
-	"github.com/cultofthecode/agent-id/internal/integration/claude/sessionstart"
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/github"
-	"github.com/cultofthecode/agent-id/internal/setup"
+	"github.com/cultoftheai/agent-id/internal/activation"
+	activationenv "github.com/cultoftheai/agent-id/internal/activation/env"
+	activationexec "github.com/cultoftheai/agent-id/internal/activation/exec"
+	"github.com/cultoftheai/agent-id/internal/cliint"
+	"github.com/cultoftheai/agent-id/internal/credential"
+	"github.com/cultoftheai/agent-id/internal/diagnose"
+	"github.com/cultoftheai/agent-id/internal/gitint/credentialhelper"
+	"github.com/cultoftheai/agent-id/internal/integration/claude/sessionstart"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/github"
+	"github.com/cultoftheai/agent-id/internal/setup"
 )
 
 // exitCoder is implemented by an error that carries the exit code of the

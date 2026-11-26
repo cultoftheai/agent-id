@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // Shape of an installation token: the installation-token prefix and a bound

@@ -10,8 +10,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 func TestRepositoriesOfTheFakeApp(t *testing.T) {
@@ -113,15 +113,15 @@ func TestRepositoriesIgnoreAWrongTotalCount(t *testing.T) {
 }
 
 func TestRepositoriesListsOwnerSlashName(t *testing.T) {
-	app := newFakeApp(t, "cultofthecode/widgets")
+	app := newFakeApp(t, "cultoftheai/widgets")
 	p := newAdapter(t, app)
 	token, err := p.Token(context.Background())
 	if err != nil {
 		t.Fatalf("Token(): %v", err)
 	}
 	got, err := p.Repositories(context.Background(), token)
-	if err != nil || !slices.Equal(got, []string{"cultofthecode/widgets"}) {
-		t.Errorf("Repositories() = %v, %v; want [cultofthecode/widgets]", got, err)
+	if err != nil || !slices.Equal(got, []string{"cultoftheai/widgets"}) {
+		t.Errorf("Repositories() = %v, %v; want [cultoftheai/widgets]", got, err)
 	}
 	if _, err := p.Repositories(context.Background(), provider.Token{Value: "x"}); !errors.Is(err, provider.ErrUnauthorized) {
 		t.Errorf("Repositories() with an invalid token: %v, want ErrUnauthorized", err)

@@ -74,7 +74,7 @@ func TestNewHTTPClientBlocksEverythingElse(t *testing.T) {
 		host string
 	}{
 		{"GitHub API", "https://api.github.com/app", "api.github.com"},
-		{"GitHub", "https://github.com/cultofthecode/agent-id.git/info/refs", "github.com"},
+		{"GitHub", "https://github.com/cultoftheai/agent-id.git/info/refs", "github.com"},
 		{"localhost by name", "http://localhost:18000/", "localhost:18000"},
 		{"port of orbit", "http://127.0.0.1:19000/", "127.0.0.1:19000"},
 	}
@@ -96,7 +96,7 @@ func TestIsolateBlocksGitFromReachingTheNetwork(t *testing.T) {
 	git := lookPath(t, "git")
 	rec := NewRecorder(t)
 	Isolate(rec)
-	out, err := exec.Command(git, "ls-remote", "https://github.com/cultofthecode/agent-id.git").CombinedOutput()
+	out, err := exec.Command(git, "ls-remote", "https://github.com/cultoftheai/agent-id.git").CombinedOutput()
 	if err == nil {
 		t.Fatalf("git ls-remote reached GitHub: %s", out)
 	}
@@ -124,9 +124,9 @@ func TestIsolateAllowsOnlyLocalAndHTTPSGitTransports(t *testing.T) {
 	git := lookPath(t, "git")
 	Isolate(t)
 	for _, remote := range []string{
-		"ssh://git@github.com/cultofthecode/agent-id.git",
-		"git@github.com:cultofthecode/agent-id.git",
-		"git://github.com/cultofthecode/agent-id.git",
+		"ssh://git@github.com/cultoftheai/agent-id.git",
+		"git@github.com:cultoftheai/agent-id.git",
+		"git://github.com/cultoftheai/agent-id.git",
 	} {
 		out, err := exec.Command(git, "ls-remote", remote).CombinedOutput()
 		if err == nil || !strings.Contains(string(out), "not allowed") {

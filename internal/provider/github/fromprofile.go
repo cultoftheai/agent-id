@@ -3,7 +3,7 @@ package github
 import (
 	"fmt"
 
-	"github.com/cultofthecode/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/profile"
 )
 
 // FromProfile returns the adapter for a profile of provider github: it

@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"syscall"
 
-	"github.com/cultofthecode/agent-id/internal/activation"
+	"github.com/cultoftheai/agent-id/internal/activation"
 )
 
 // Execer replaces the process with the command. It returns only on failure.

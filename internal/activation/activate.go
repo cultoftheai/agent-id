@@ -7,9 +7,9 @@ import (
 	"slices"
 	"strings"
 
-	"github.com/cultofthecode/agent-id/internal/gitint"
-	"github.com/cultofthecode/agent-id/internal/profile"
-	"github.com/cultofthecode/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/gitint"
+	"github.com/cultoftheai/agent-id/internal/profile"
+	"github.com/cultoftheai/agent-id/internal/provider"
 )
 
 // ProfileResolver is the port to the profile store.

@@ -5,9 +5,9 @@ import (
 	"errors"
 	"os"
 
-	"github.com/cultofthecode/agent-id/internal/gitint/credentialhelper"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/token"
+	"github.com/cultoftheai/agent-id/internal/gitint/credentialhelper"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/token"
 )
 
 // newCredentialHelper returns the production handler of git-credential: the

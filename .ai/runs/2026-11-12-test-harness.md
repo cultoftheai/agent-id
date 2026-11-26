@@ -1,6 +1,6 @@
 # Execution plan — extend the test harness (E01-T05, #10)
 
-Source issue: https://github.com/cultofthecode/agent-id/issues/10
+Source issue: https://github.com/cultoftheai/agent-id/issues/10
 Route: `om-auto-fix-issue` feature route, implemented through `om-auto-create-pr`. The issue carries the scope and acceptance criteria and meets the Definition of Ready, so it is the source document; no separate spec PR (the owner asked for implementation and one PR).
 Claim-Run: 055cfc2d-c12e-43a0-a1e8-664848316428
 

@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/testenv"
 )
 
 const execConfig = `{"version":1,"profiles":{
@@ -52,7 +52,7 @@ func newExecFixture(t *testing.T) *execFixture {
 	if err := os.WriteFile(filepath.Join(dir, "config.json"), []byte(execConfig), 0o600); err != nil {
 		t.Fatal(err)
 	}
-	return &execFixture{t: t, env: env, binary: testenv.BuildBinary(t, env, "github.com/cultofthecode/agent-id/cmd/agent-id"), workdir: env.Home}
+	return &execFixture{t: t, env: env, binary: testenv.BuildBinary(t, env, "github.com/cultoftheai/agent-id/cmd/agent-id"), workdir: env.Home}
 }
 
 func (f *execFixture) run(args ...string) execRun {

@@ -3,7 +3,7 @@ package whoami
 import (
 	"github.com/spf13/cobra"
 
-	"github.com/cultofthecode/agent-id/internal/diagnose"
+	"github.com/cultoftheai/agent-id/internal/diagnose"
 )
 
 // NewCommand returns the whoami command. It prints to the command's output

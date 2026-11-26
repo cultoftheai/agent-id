@@ -6,6 +6,10 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). The
 
 ## [Unreleased]
 
+### Changed
+
+- The repository moved to the organization `cultoftheai`. The Go module path is now `github.com/cultoftheai/agent-id`, and the Homebrew tap is `cultoftheai/homebrew-tap` (`brew install cultoftheai/tap/agent-id`).
+
 ## [0.1.0] - 2026-11-14
 
 First release. agent-id gives an AI coding agent its own GitHub App identity for one process and its descendants. It supports GitHub.com, macOS and Linux, and Bash and Zsh. Local mode is not a security boundary.
@@ -23,7 +27,7 @@ First release. agent-id gives an AI coding agent its own GitHub App identity for
 - **`gh` shim.** The `gh` command in an agent context starts a launcher. The launcher gives each `gh` call a fresh bot token. It refuses `gh alias` and `gh config`, and it never runs `gh` with an empty token (#104, #123).
 - **Commit identity.** In an agent context, commits carry the bot as author and committer. agent-id switches off Git signing with the personal key (#89).
 - **Token cache.** The token manager caches installation tokens on disk and refreshes them before they expire (#66, #81).
-- **Release chain.** A signed `v*` tag starts the release workflow. The workflow runs in the `release` environment and needs approval. It publishes four archives for macOS and Linux, `checksums.txt`, and a build provenance attestation for each archive (#47, #83, #126). For a stable tag, the workflow also opens a pull request on the Homebrew tap `cultofthecode/homebrew-tap` (#114).
+- **Release chain.** A signed `v*` tag starts the release workflow. The workflow runs in the `release` environment and needs approval. It publishes four archives for macOS and Linux, `checksums.txt`, and a build provenance attestation for each archive (#47, #83, #126). For a stable tag, the workflow also opens a pull request on the Homebrew tap `cultoftheai/homebrew-tap` (#114).
 - **End-to-end check.** The `e2e` tests and a runbook let the owner run agent-id against real GitHub by hand (#109, #121).
 
 ### Security
@@ -44,5 +48,5 @@ First release. agent-id gives an AI coding agent its own GitHub App identity for
 - Specifications describe the profile file, `exec`, `env`, `whoami` and `doctor`, `setup github`, the token manager, and the commit identity (#33, #48, #51, #54, #59, #60, #61, #65, #80).
 - `SDLC.md` records the merge rules and the `main` ruleset (#102). `RELEASING.md` describes the release and the Homebrew tap (#47, #83, #114).
 
-[Unreleased]: https://github.com/cultofthecode/agent-id/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/cultofthecode/agent-id/releases/tag/v0.1.0
+[Unreleased]: https://github.com/cultoftheai/agent-id/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/cultoftheai/agent-id/releases/tag/v0.1.0

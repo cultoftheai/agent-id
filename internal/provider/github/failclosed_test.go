@@ -10,11 +10,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cultofthecode/agent-id/internal/credential"
-	"github.com/cultofthecode/agent-id/internal/provider"
-	"github.com/cultofthecode/agent-id/internal/provider/github/githubtest"
-	"github.com/cultofthecode/agent-id/internal/testenv"
-	"github.com/cultofthecode/agent-id/internal/token"
+	"github.com/cultoftheai/agent-id/internal/credential"
+	"github.com/cultoftheai/agent-id/internal/provider"
+	"github.com/cultoftheai/agent-id/internal/provider/github/githubtest"
+	"github.com/cultoftheai/agent-id/internal/testenv"
+	"github.com/cultoftheai/agent-id/internal/token"
 )
 
 // The fail-closed suite of #25 for the in-process chain: key file, adapter,

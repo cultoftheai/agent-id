@@ -1,6 +1,6 @@
 # Execution plan — ADR: provider abstraction (#35)
 
-Source doc: https://github.com/cultofthecode/agent-id/issues/35
+Source doc: https://github.com/cultoftheai/agent-id/issues/35
 Engine: om-auto-create-pr (steps: 4, --loop: no)
 Branch: `docs/adr-provider-abstraction` (operator-chosen; overrides the default `feat/` prefix)
 
